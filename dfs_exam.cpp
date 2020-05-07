@@ -5,6 +5,7 @@
 using namespace std;
 vector<int> v[6];
 int checker[6] = {false,};
+
 stack<int> s;
 
 
@@ -35,11 +36,14 @@ void dfs_stack(int start) {
 void dfs(int start) {
 	cout << start << " ";
 	checker[start]=true;
-		if(checker[v[start][i]]==false) {
+	
+	for(int i=0;i<v[start].size();++i) {
+		if(checker[v[start][i]]==false) 
 			dfs(v[start][i]);
-		}
 	}
+	
 }
+
 
 
 int main(void) {
@@ -56,7 +60,7 @@ int main(void) {
 	
 	v[5].push_back(2);
 
-	dfs_stack(1);
+	dfs(1);
 	cout << "\n";
 
 	
