@@ -2,7 +2,7 @@
 using namespace std;
 
 int number = 6;
-int INF = 1000000000;
+int INF = 987654321;
 
 int a[6][6] = {
 	{0,2,5,1,INF,INF},
@@ -32,7 +32,7 @@ void dijkstra(int start) {
 		d[i] = a[start][i];
 	}
 	v[start]=true;
-	for(int i=0;i<number-1;++i) {
+	for(int i=0;i<number-2;++i) {
 		int current = getSmallIndex();
 		v[current] = true;
 		for(int j=0;j<number;++j) {
@@ -49,5 +49,53 @@ int main(void) {
 	dijkstra(0);
 	for(int i=0;i<number;++i) {
 		cout << d[i] << " ";
+	}
+	cout << "\n";
+	for(int i=0;i<6;++i) {
+		v[i]=false;
+	}
+	
+	dijkstra(1);
+	for(int i=0;i<number;++i) {
+		cout << d[i] << " ";
+	}
+	cout << "\n";
+	for(int i=0;i<6;++i) {
+		v[i]=false;
+	}	
+	
+	dijkstra(2);
+	for(int i=0;i<number;++i) {
+		cout << d[i] << " ";
+	}
+	cout << "\n";
+	for(int i=0;i<6;++i) {
+		v[i]=false;
+	}
+	
+	dijkstra(3);
+	for(int i=0;i<number;++i) {
+		cout << d[i] << " ";
+	}	
+	cout << "\n";
+	for(int i=0;i<6;++i) {
+		v[i]=false;
+	}
+	
+	dijkstra(4);
+	for(int i=0;i<number;++i) {
+		cout << d[i] << " ";
+	}	
+	cout << "\n";
+	for(int i=0;i<6;++i) {
+		v[i]=false;
+	}
+	
+	dijkstra(5);
+	for(int i=0;i<number;++i) {
+		cout << d[i] << " ";
+	}
+	for(int i=0;i<6;++i) {
+		v[i]=false;
 	}
 }
