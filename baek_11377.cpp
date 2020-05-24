@@ -14,7 +14,7 @@ bool dfs(int x) {
 		if(c[t]) continue;
 		c[t] = true;
 		if(d[t]==0 || dfs(d[t])) {
-			d[t] = x;
+			d[t] = x; 
 			return true;
 		}
 	}
